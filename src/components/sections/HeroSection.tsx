@@ -68,7 +68,7 @@ export function HeroSection() {
             {siteConfig.name}
           </p>
 
-          <h1 className="font-display-lg text-display-lg md:text-[56px] lg:text-[64px] md:leading-[1.1] text-white tracking-tight">
+          <h1 className="font-display-lg text-display-lg md:text-[56px] lg:text-[64px] md:leading-[1.1] text-on-surface tracking-tight">
             <span className="text-brand-blue text-glow">Android Developer</span>{" "}
             Building Enterprise Mobile Platforms
           </h1>

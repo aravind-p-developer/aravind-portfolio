@@ -44,7 +44,7 @@ export function ProfileAvatar({
       {/* Main squircle container */}
       <div
         className={cn(
-          "w-full h-full bg-white/[0.02] border border-white/10 overflow-hidden relative flex items-center justify-center z-10",
+          "w-full h-full bg-surface-container/30 border border-brand-border overflow-hidden relative flex items-center justify-center z-10",
           roundedClass
         )}
       >
@@ -56,7 +56,7 @@ export function ProfileAvatar({
         <img
           src={profileImage}
           alt="Aravind Puranam — Android Developer based in Hyderabad, India"
-          className="w-full h-full object-cover z-10 grayscale group-hover:grayscale-0 transition-all duration-700"
+          className="w-full h-full object-cover z-10 grayscale-0 lg:grayscale lg:group-hover:grayscale-0 transition-all duration-700"
         />
       </div>
     </motion.div>

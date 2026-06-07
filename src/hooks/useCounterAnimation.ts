@@ -17,12 +17,14 @@ export function useCounterAnimation({
 }: UseCounterAnimationOptions) {
   const [currentValue, setCurrentValue] = useState(0);
   const [isAnimating, setIsAnimating] = useState(!triggerOnScroll);
+  const hasTriggered = useRef(false);
   const elementRef = useRef<HTMLDivElement>(null);
   const animationFrameRef = useRef<number | null>(null);
 
   // Handle scroll trigger
   useEffect(() => {
     if (!triggerOnScroll) return;
+    if (hasTriggered.current) return;
 
     if (!elementRef.current) return;
 
@@ -32,15 +34,17 @@ export function useCounterAnimation({
 
     if (prefersReducedMotion) {
       setCurrentValue(targetValue);
+      hasTriggered.current = true;
       return;
     }
 
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting && !isAnimating) {
+          if (entry.isIntersecting && !hasTriggered.current) {
+            hasTriggered.current = true;
             setIsAnimating(true);
-            observer.unobserve(entry.target);
+            observer.disconnect();
           }
         });
       },
@@ -50,11 +54,9 @@ export function useCounterAnimation({
     observer.observe(elementRef.current);
 
     return () => {
-      if (elementRef.current) {
-        observer.unobserve(elementRef.current);
-      }
+      observer.disconnect();
     };
-  }, [triggerOnScroll, targetValue, isAnimating]);
+  }, [triggerOnScroll, targetValue]);
 
   // Handle animation
   useEffect(() => {

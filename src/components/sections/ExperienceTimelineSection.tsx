@@ -134,7 +134,7 @@ export function ExperienceTimelineSection() {
 
                     <div className="flex-1 min-w-0">
                       <div className="flex flex-wrap items-center gap-2 mb-1">
-                        <h3 className="font-headline-md text-headline-md text-white">
+                        <h3 className="font-headline-md text-headline-md text-on-surface">
                           {experience.title}
                         </h3>
 
@@ -178,7 +178,7 @@ export function ExperienceTimelineSection() {
                       {experience.metrics.map((metric) => (
                         <span
                           key={metric}
-                          className="inline-flex items-center gap-1.5 font-label-sm text-label-sm text-white/90 bg-brand-blue/15 border border-brand-blue/20 rounded-full px-3 py-1.5 hover:border-brand-blue/40 hover:bg-brand-blue/30 transition-colors"
+                          className="inline-flex items-center gap-1.5 font-label-sm text-label-sm text-on-surface bg-brand-blue/10 border border-brand-blue/20 rounded-full px-3 py-1.5 hover:border-brand-blue/35 hover:bg-brand-blue/20 transition-colors"
                         >
                           <TrendingUp size={12} className="text-brand-blue" />
                           {metric}

@@ -28,6 +28,16 @@
     <meta name="twitter:image" content="https://aravind-puranam.dev/og-image.png" />
 
     <meta name="theme-color" content="#0A0A0A" />
+    <script>
+      (function() {
+        const theme = localStorage.getItem('theme') || 'dark';
+        if (theme === 'dark') {
+          document.documentElement.classList.add('dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+        }
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>

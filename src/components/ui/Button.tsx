@@ -24,9 +24,9 @@ export function Button({
     primary:
       'bg-brand-blue hover:bg-blue-500 text-white hover:shadow-[0_0_20px_rgba(59,130,246,0.4)]',
     secondary:
-      'bg-transparent border border-[#333] hover:border-brand-blue/50 hover:bg-brand-blue/5 text-on-surface',
+      'bg-transparent border border-brand-border hover:border-brand-blue/50 hover:bg-brand-blue/5 text-on-surface',
     ghost:
-      'bg-transparent text-on-surface-variant hover:text-white hover:bg-white/5',
+      'bg-transparent text-on-surface-variant hover:text-on-surface hover:bg-surface-variant/30',
   };
 
   const sizes = {

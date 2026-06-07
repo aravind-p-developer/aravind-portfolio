@@ -64,7 +64,7 @@ export function AboutSection() {
 
               <div>
 
-                <h3 className="font-headline-md text-headline-md text-white">
+                <h3 className="font-headline-md text-headline-md text-on-surface">
 
                   {siteConfig.name}
 

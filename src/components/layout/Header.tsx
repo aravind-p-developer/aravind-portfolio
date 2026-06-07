@@ -1,6 +1,8 @@
 /**
- * Header component with navigation
+ * Header component with navigation and theme switcher
  */
+import { useEffect, useState } from 'react';
+import { Sun, Moon } from 'lucide-react';
 import { cn } from '../../utils';
 import { useActiveSection } from '../../hooks';
 import { siteConfig } from '../../config';
@@ -31,8 +33,34 @@ export function Header() {
     sectionIds: navigationLinks.map((link) => link.id),
   });
 
+  const [theme, setTheme] = useState(() => {
+    if (typeof window !== 'undefined') {
+      return localStorage.getItem('theme') || 'dark';
+    }
+    return 'dark';
+  });
+
+  useEffect(() => {
+    const root = window.document.documentElement;
+    const metaThemeColor = document.querySelector('meta[name="theme-color"]');
+    if (theme === 'dark') {
+      root.classList.add('dark');
+      root.classList.remove('light');
+      metaThemeColor?.setAttribute('content', '#0A0A0A');
+    } else {
+      root.classList.add('light');
+      root.classList.remove('dark');
+      metaThemeColor?.setAttribute('content', '#f9fafb');
+    }
+    localStorage.setItem('theme', theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme((prev) => (prev === 'dark' ? 'light' : 'dark'));
+  };
+
   return (
-    <header className="bg-surface/70 backdrop-blur-xl fixed top-0 w-full border-b border-white/5 shadow-2xl z-50 transition-all duration-300">
+    <header className="bg-surface/70 backdrop-blur-xl fixed top-0 w-full border-b border-brand-border shadow-2xl z-50 transition-all duration-300">
       <nav className="flex justify-between items-center max-w-container-max mx-auto px-gutter h-16">
         <a
           href="#hero"
@@ -42,7 +70,7 @@ export function Header() {
           <div className="h-8 w-8 rounded-lg bg-brand-blue/20 group-hover:scale-105 group-hover:shadow-[0_0_12px_rgba(59,130,246,0.3)] transition-all duration-300 flex items-center justify-center border border-brand-blue/20">
             <span className="text-brand-blue font-bold text-sm">&lt;/&gt;</span>
           </div>
-          <span className="font-label-md text-label-md tracking-tighter text-primary group-hover:text-white transition-colors hidden sm:inline">
+          <span className="font-label-md text-label-md tracking-tighter text-primary group-hover:text-on-surface transition-colors hidden sm:inline">
             {siteConfig.name}
           </span>
         </a>
@@ -63,13 +91,27 @@ export function Header() {
           ))}
         </div>
 
-        <a
-          href="#contact"
-          onClick={(e) => { e.preventDefault(); scrollToSection('contact'); }}
-          className="bg-brand-blue hover:bg-blue-500 text-white font-label-md text-label-md px-md py-sm rounded-lg transition-all duration-300"
-        >
-          Hire Me
-        </a>
+        <div className="flex items-center gap-md">
+          <button
+            onClick={toggleTheme}
+            className="h-10 w-10 rounded-lg flex items-center justify-center border border-brand-border bg-surface-container/20 text-on-surface-variant hover:text-on-surface hover:border-brand-blue/50 hover:bg-brand-blue/5 transition-all duration-300 active:scale-95 cursor-pointer"
+            aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} theme`}
+          >
+            {theme === 'dark' ? (
+              <Sun size={18} className="transition-transform duration-500 hover:rotate-45" />
+            ) : (
+              <Moon size={18} className="transition-transform duration-500 hover:-rotate-12" />
+            )}
+          </button>
+
+          <a
+            href="#contact"
+            onClick={(e) => { e.preventDefault(); scrollToSection('contact'); }}
+            className="bg-brand-blue hover:bg-blue-500 text-white font-label-md text-label-md px-md py-sm rounded-lg transition-all duration-300"
+          >
+            Hire Me
+          </a>
+        </div>
       </nav>
     </header>
   );

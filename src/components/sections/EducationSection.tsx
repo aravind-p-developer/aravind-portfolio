@@ -82,7 +82,7 @@ export function EducationSection() {
 
                     </div>
 
-                    <h3 className="font-headline-md text-headline-md text-white leading-snug">
+                    <h3 className="font-headline-md text-headline-md text-on-surface leading-snug">
 
                       {edu.field}
 

@@ -125,7 +125,7 @@ export function ContactSection() {
                   {method.icon}
                 </div>
                 <div>
-                  <h3 className="font-headline-md text-headline-md text-white mb-2">
+                  <h3 className="font-headline-md text-headline-md text-on-surface mb-2">
                     {method.label}
                   </h3>
                   <p className="font-body-md text-on-surface-variant group-hover:text-brand-blue transition-colors break-all text-sm">
