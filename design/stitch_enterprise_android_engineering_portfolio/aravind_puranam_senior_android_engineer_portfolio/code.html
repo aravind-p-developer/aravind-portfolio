@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+
+<html class="dark scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Aravind Puranam | Android Engineer</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface": "#131313",
+                        "surface-tint": "#adc6ff",
+                        "surface-bright": "#3a3939",
+                        "on-tertiary-fixed": "#001551",
+                        "on-primary-fixed-variant": "#004395",
+                        "on-secondary": "#00315d",
+                        "on-error-container": "#ffdad6",
+                        "secondary": "#a4c9ff",
+                        "tertiary": "#b7c4ff",
+                        "secondary-fixed-dim": "#a4c9ff",
+                        "inverse-primary": "#005ac2",
+                        "error": "#ffb4ab",
+                        "primary-fixed": "#d8e2ff",
+                        "outline-variant": "#424754",
+                        "on-secondary-fixed": "#001c39",
+                        "surface-container-high": "#2a2a2a",
+                        "error-container": "#93000a",
+                        "on-tertiary-container": "#002072",
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-background": "#e5e2e1",
+                        "primary-fixed-dim": "#adc6ff",
+                        "outline": "#8c909f",
+                        "primary-container": "#4d8eff",
+                        "surface-container-highest": "#353534",
+                        "surface-container": "#201f1f",
+                        "on-primary": "#002e6a",
+                        "inverse-on-surface": "#313030",
+                        "on-primary-fixed": "#001a42",
+                        "surface-dim": "#131313",
+                        "on-primary-container": "#00285d",
+                        "background": "#131313",
+                        "on-tertiary": "#002682",
+                        "tertiary-fixed-dim": "#b7c4ff",
+                        "on-error": "#690005",
+                        "on-tertiary-fixed-variant": "#0039b5",
+                        "surface-container-low": "#1c1b1b",
+                        "inverse-surface": "#e5e2e1",
+                        "secondary-fixed": "#d4e3ff",
+                        "tertiary-container": "#6989ff",
+                        "on-surface-variant": "#c2c6d6",
+                        "on-secondary-fixed-variant": "#004883",
+                        "surface-variant": "#353534",
+                        "on-secondary-container": "#d6e5ff",
+                        "secondary-container": "#0267b8",
+                        "primary": "#adc6ff",
+                        "on-surface": "#e5e2e1",
+                        "tertiary-fixed": "#dce1ff",
+                        "brand-blue": "#3B82F6",
+                        "brand-dark": "#0A0A0A",
+                        "brand-card": "rgba(17, 17, 17, 0.8)",
+                        "brand-border": "rgba(255, 255, 255, 0.08)"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "xl": "48px",
+                        "container-max": "1200px",
+                        "sm": "8px",
+                        "xs": "4px",
+                        "md": "16px",
+                        "unit": "4px",
+                        "lg": "24px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Geist", "sans-serif"],
+                        "headline-lg": ["Geist", "sans-serif"],
+                        "headline-md": ["Geist", "sans-serif"],
+                        "body-lg": ["Geist", "sans-serif"],
+                        "label-md": ["JetBrains Mono", "monospace"],
+                        "headline-lg-mobile": ["Geist", "sans-serif"],
+                        "body-md": ["Geist", "sans-serif"],
+                        "label-sm": ["JetBrains Mono", "monospace"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "700" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.03em", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "1.3", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "letterSpacing": "-0.01em", "fontWeight": "400" }],
+                        "label-md": ["14px", { "lineHeight": "1.4", "letterSpacing": "0.02em", "fontWeight": "500" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "1.5", "letterSpacing": "-0.01em", "fontWeight": "400" }],
+                        "label-sm": ["12px", { "lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: #0A0A0A;
+            color: #e5e2e1;
+            font-family: 'Geist', sans-serif;
+            background-image: radial-gradient(circle at 50% 0%, rgba(59, 130, 246, 0.15), transparent 50%),
+                              radial-gradient(circle at 100% 100%, rgba(59, 130, 246, 0.05), transparent 50%);
+            background-attachment: fixed;
+        }
+        
+        .glass-card {
+            background: rgba(17, 17, 17, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.05), 0 20px 40px rgba(0,0,0,0.4);
+        }
+
+        .text-glow {
+            text-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+        }
+
+        .border-glow {
+            box-shadow: 0 0 15px rgba(59, 130, 246, 0.2);
+        }
+
+        .metric-pulse {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: .5; }
+        }
+
+        .glow-dot {
+            width: 8px;
+            height: 8px;
+            background-color: #3B82F6;
+            border-radius: 50%;
+            box-shadow: 0 0 10px #3B82F6;
+            display: inline-block;
+        }
+        
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0A0A0A;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #333;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+
+        /* Animations */
+        @media (prefers-reduced-motion: no-preference) {
+            .reveal {
+                opacity: 0;
+                transform: translateY(30px);
+                transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            }
+            .reveal.active {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            .delay-100 { transition-delay: 100ms; }
+            .delay-200 { transition-delay: 200ms; }
+            .delay-300 { transition-delay: 300ms; }
+        }
+
+        .mesh-bg {
+            position: absolute;
+            inset: -20% -20%;
+            z-index: -1;
+            background: radial-gradient(circle at 20% 20%, rgba(59, 130, 246, 0.1) 0%, transparent 40%),
+                        radial-gradient(circle at 80% 80%, rgba(59, 130, 246, 0.05) 0%, transparent 40%);
+            animation: mesh-flow 15s ease-in-out infinite alternate;
+            opacity: 0.7;
+            pointer-events: none;
+        }
+        
+        @keyframes mesh-flow {
+            0% { transform: scale(1) translate(0, 0); }
+            50% { transform: scale(1.05) translate(2%, 2%); }
+            100% { transform: scale(1) translate(-2%, -2%); }
+        }
+
+        .spotlight-card {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .spotlight-card::before {
+            content: '';
+            position: absolute;
+            top: var(--y, 0);
+            left: var(--x, 0);
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, transparent 70%);
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .spotlight-card:hover::before {
+            opacity: 1;
+        }
+        
+        .spotlight-card > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        .timeline-line {
+            width: 2px;
+            background: rgba(255, 255, 255, 0.1);
+            position: absolute;
+            left: 19px;
+            top: 8px;
+            bottom: 0;
+        }
+        
+        .timeline-fill {
+            width: 100%;
+            background: #3B82F6;
+            height: 0%;
+            transition: height 0.1s ease-out;
+            box-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+        }
+    </style>
+</head>
+<body class="antialiased min-h-screen flex flex-col selection:bg-brand-blue selection:text-white">
+<!-- TopNavBar -->
+<header class="bg-surface/80 backdrop-blur-xl fixed top-0 w-full border-b border-white/10 shadow-2xl z-50">
+<nav class="flex justify-between items-center max-w-container-max mx-auto px-gutter h-16">
+<div class="flex items-center gap-sm cursor-pointer group">
+<span class="font-label-md text-label-md tracking-tighter text-primary">Aravind Puranam</span>
+</div>
+<div class="hidden md:flex gap-lg">
+<a class="text-on-surface-variant hover:text-on-surface transition-colors font-label-md text-label-md" href="#about">About</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors font-label-md text-label-md" href="#experience">Experience</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors font-label-md text-label-md" href="#work">Case Studies</a>
+</div>
+<div class="flex items-center gap-md">
+<a class="bg-brand-blue hover:bg-blue-600 text-white font-label-md text-label-md px-md py-sm rounded-lg transition-colors duration-300 active:scale-95" href="mailto:vnaravindganesh.p@gmail.com">
+                    Hire Me
+                </a>
+</div>
+</nav>
+</header>
+<main class="flex-grow pt-32 pb-xl px-gutter max-w-container-max mx-auto w-full flex flex-col gap-32 relative">
+<!-- Hero Section -->
+<section class="flex flex-col-reverse lg:flex-row items-center justify-between gap-xl lg:min-h-[70vh] relative" id="hero">
+<div class="mesh-bg"></div>
+<div class="lg:w-3/5 flex flex-col gap-lg z-10">
+<div class="inline-flex items-center gap-2 bg-white/5 border border-white/10 rounded-full px-4 py-1.5 w-fit reveal">
+<span class="glow-dot metric-pulse"></span>
+<span class="font-label-sm text-label-sm text-brand-blue uppercase tracking-widest">Available for Hire</span>
+</div>
+<h1 class="font-display-lg text-display-lg md:text-[64px] md:leading-[1.1] text-white reveal delay-100">
+                    Building Android Systems That <span class="text-brand-blue text-glow">Work Beyond Perfect Network Conditions</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl reveal delay-200">
+                    Android Engineer focused on enterprise SaaS, offline-first architecture, background processing, location intelligence and scalable mobile platforms.
+                </p>
+<div class="flex flex-wrap gap-md mt-sm reveal delay-300">
+<a class="bg-brand-blue hover:bg-blue-600 text-white font-label-md text-label-md px-lg py-3 rounded-lg transition-all duration-300 active:scale-95 flex items-center gap-2" href="#experience">
+                        View Experience
+                    </a>
+<button class="bg-transparent border border-[#262626] hover:border-[#404040] hover:bg-white/5 text-on-surface font-label-md text-label-md px-lg py-3 rounded-lg transition-all duration-300 active:scale-95 flex items-center gap-2">
+<span class="material-symbols-outlined">download</span>
+                        Download Resume
+                    </button>
+<a class="bg-transparent text-on-surface-variant hover:text-white font-label-md text-label-md px-lg py-3 rounded-lg transition-all duration-300 active:scale-95 flex items-center gap-2" href="mailto:vnaravindganesh.p@gmail.com">
+                        Contact Me
+                    </a>
+</div>
+</div>
+<div class="lg:w-2/5 flex justify-center lg:justify-end reveal delay-200">
+<div class="relative w-64 h-64 md:w-80 md:h-80 rounded-full p-2 glass-card border-glow flex items-center justify-center overflow-hidden group">
+<div class="absolute inset-0 bg-gradient-to-tr from-brand-blue/20 to-transparent opacity-50 group-hover:opacity-100 transition-opacity duration-500"></div>
+<img alt="A professional headshot of Aravind Puranam." class="w-full h-full object-cover rounded-full z-10 filter grayscale hover:grayscale-0 transition-all duration-500" src="https://lh3.googleusercontent.com/aida/AP1WRLsimIXutWS1tOdBgZ5B9F0kZQqE-aI1dH8P9FqC1z-blV9-R4w9p6yIuJo6qnwkJW7XVVWtnpR-ca-xN8_Vq3nzJrW166_dn6Jw0J9EDwQoc-n88g6XEnpfv25kfeQkCmdzQPfUppbjVGRDEUP6hD7w5cUyviOTk5HIlWUbNmR9xuGNHE_Q1e_R17-h_AwhylwLATH-gawddxWUM82YsnpsVcyp4V5HVO-fTYCZL2CcmjX-5B60F_gNvHw"/>
+</div>
+</div>
+</section>
+<!-- About Section -->
+<section class="flex flex-col gap-lg" id="about">
+<h2 class="font-headline-lg text-headline-lg text-white mb-md reveal">Engineering Philosophy</h2>
+<div class="glass-card rounded-xl p-lg reveal spotlight-card">
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+        I specialize in solving the difficult, invisible problems of Android development. While UI is important, my passion lies in what happens behind the screen: ensuring absolute reliability when network conditions fail, building bulletproof offline sync mechanisms, orchestrating complex background execution with WorkManager, and maintaining production stability for enterprise-scale applications. I believe that a truly great mobile app doesn't just look good—it works flawlessly, regardless of connectivity or environment.
+    </p>
+</div>
+</section>
+<!-- Enterprise Experience Timeline -->
+<section class="flex flex-col gap-lg timeline-container" id="experience">
+<h2 class="font-headline-lg text-headline-lg text-white mb-md reveal">Experience</h2>
+<div class="relative pl-10 md:pl-12">
+<div class="timeline-line"><div class="timeline-fill"></div></div>
+<div class="mb-12 relative reveal">
+<div class="absolute -left-[41px] md:-left-[49px] top-2 w-4 h-4 rounded-full bg-brand-blue border-4 border-surface shadow-[0_0_10px_rgba(59,130,246,0.8)] z-10"></div>
+<h3 class="font-headline-md text-headline-md text-white">Android Engineer</h3>
+<p class="text-brand-blue font-label-md mb-2 mt-1">Spoors Technology Solutions • EFFORT Platform</p>
+<p class="text-on-surface-variant font-body-md max-w-3xl">Spearheaded the development and optimization of the EFFORT enterprise SaaS platform. Architected offline-first mobile synchronization engine, location intelligence systems, and migrated legacy background processes to robust WorkManager implementations.</p>
+</div>
+<div class="mb-12 relative reveal delay-100">
+<div class="absolute -left-[41px] md:-left-[49px] top-2 w-4 h-4 rounded-full bg-surface-variant border-4 border-surface z-10 transition-colors duration-300" data-timeline-dot=""></div>
+<h3 class="font-headline-md text-headline-md text-white">Android Developer</h3>
+<p class="text-brand-blue font-label-md mb-2 mt-1">Monosage</p>
+<p class="text-on-surface-variant font-body-md max-w-3xl mb-4">Developed versatile mobile solutions across diverse domains.</p>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-md">
+<div class="glass-card p-4 rounded-lg border-l-2 border-brand-blue">
+<h4 class="font-label-md text-white mb-1">Social Media Platform</h4>
+<p class="text-on-surface-variant text-sm">Built interactive feeds and real-time messaging features.</p>
+</div>
+<div class="glass-card p-4 rounded-lg border-l-2 border-brand-blue">
+<h4 class="font-label-md text-white mb-1">E-Commerce App</h4>
+<p class="text-on-surface-variant text-sm">Implemented secure checkout flows and product catalog navigation.</p>
+</div>
+<div class="glass-card p-4 rounded-lg border-l-2 border-brand-blue">
+<h4 class="font-label-md text-white mb-1">CRM System</h4>
+<p class="text-on-surface-variant text-sm">Created mobile client for lead tracking and customer management.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Signature Engineering Work -->
+<section class="flex flex-col gap-lg" id="work">
+<h2 class="font-headline-lg text-headline-lg text-white mb-md reveal">Signature Engineering Work</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<!-- Case Study 1 -->
+<div class="glass-card rounded-xl p-lg flex flex-col gap-sm hover:-translate-y-1 transition-transform duration-300 reveal spotlight-card border-t border-t-brand-blue/30">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-brand-blue" style="font-variation-settings: 'FILL' 1;">sync</span>
+<h3 class="font-headline-md text-headline-md text-white">Offline-First Architecture</h3>
+</div>
+<p class="font-body-md text-on-surface-variant">Designed robust local-first data synchronization layers using Room and structured conflict resolution strategies to ensure seamless operation in low-connectivity environments.</p>
+</div>
+<!-- Case Study 2 -->
+<div class="glass-card rounded-xl p-lg flex flex-col gap-sm hover:-translate-y-1 transition-transform duration-300 reveal delay-100 spotlight-card border-t border-t-brand-blue/30">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-brand-blue" style="font-variation-settings: 'FILL' 1;">schedule</span>
+<h3 class="font-headline-md text-headline-md text-white">WorkManager Migration</h3>
+</div>
+<p class="font-body-md text-on-surface-variant">Led complex migrations from deprecated background execution models to WorkManager, guaranteeing reliable, battery-efficient task execution for critical enterprise data processing.</p>
+</div>
+<!-- Case Study 3 -->
+<div class="glass-card rounded-xl p-lg flex flex-col gap-sm hover:-translate-y-1 transition-transform duration-300 reveal delay-200 spotlight-card border-t border-t-brand-blue/30">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-brand-blue" style="font-variation-settings: 'FILL' 1;">location_on</span>
+<h3 class="font-headline-md text-headline-md text-white">Location Intelligence</h3>
+</div>
+<p class="font-body-md text-on-surface-variant">Implemented precise, battery-optimized location tracking and geofencing systems for field-force management, balancing accuracy with device resource constraints.</p>
+</div>
+<!-- Case Study 4 -->
+<div class="glass-card rounded-xl p-lg flex flex-col gap-sm hover:-translate-y-1 transition-transform duration-300 reveal delay-300 spotlight-card border-t border-t-brand-blue/30">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-brand-blue" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+<h3 class="font-headline-md text-headline-md text-white">Production Stability</h3>
+</div>
+<p class="font-body-md text-on-surface-variant">Established rigorous crash monitoring, memory leak detection, and automated testing pipelines to maintain 99.9% crash-free sessions across diverse Android device ecosystems.</p>
+</div>
+</div>
+</section>
+<!-- Technical Stack -->
+<section class="flex flex-col gap-lg" id="stack">
+<h2 class="font-headline-lg text-headline-lg text-white mb-md reveal">Technical Stack</h2>
+<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 reveal delay-100">
+<div class="glass-card p-4 rounded-lg flex flex-col items-center justify-center gap-2 hover:bg-white/5 transition-colors">
+<span class="font-label-md text-white">Kotlin</span>
+</div>
+<div class="glass-card p-4 rounded-lg flex flex-col items-center justify-center gap-2 hover:bg-white/5 transition-colors">
+<span class="font-label-md text-white">Jetpack Compose</span>
+</div>
+<div class="glass-card p-4 rounded-lg flex flex-col items-center justify-center gap-2 hover:bg-white/5 transition-colors">
+<span class="font-label-md text-white">WorkManager</span>
+</div>
+<div class="glass-card p-4 rounded-lg flex flex-col items-center justify-center gap-2 hover:bg-white/5 transition-colors">
+<span class="font-label-md text-white">Room</span>
+</div>
+<div class="glass-card p-4 rounded-lg flex flex-col items-center justify-center gap-2 hover:bg-white/5 transition-colors">
+<span class="font-label-md text-white">Hilt / Dagger</span>
+</div>
+<div class="glass-card p-4 rounded-lg flex flex-col items-center justify-center gap-2 hover:bg-white/5 transition-colors">
+<span class="font-label-md text-white">Coroutines</span>
+</div>
+<div class="glass-card p-4 rounded-lg flex flex-col items-center justify-center gap-2 hover:bg-white/5 transition-colors">
+<span class="font-label-md text-white">Retrofit</span>
+</div>
+<div class="glass-card p-4 rounded-lg flex flex-col items-center justify-center gap-2 hover:bg-white/5 transition-colors">
+<span class="font-label-md text-white">Flow</span>
+</div>
+<div class="glass-card p-4 rounded-lg flex flex-col items-center justify-center gap-2 hover:bg-white/5 transition-colors">
+<span class="font-label-md text-white">MVVM / MVI</span>
+</div>
+<div class="glass-card p-4 rounded-lg flex flex-col items-center justify-center gap-2 hover:bg-white/5 transition-colors">
+<span class="font-label-md text-white">Location Services</span>
+</div>
+</div>
+</section>
+<!-- Engineering Impact (Preserved for animated counters) -->
+<section class="flex flex-col gap-lg" id="impact">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-md">
+<!-- Card 1 -->
+<div class="glass-card rounded-xl p-lg flex flex-col gap-sm hover:-translate-y-1 transition-transform duration-300 reveal spotlight-card">
+<span class="material-symbols-outlined text-brand-blue" style="font-variation-settings: 'FILL' 1;">corporate_fare</span>
+<h3 class="font-display-lg text-display-lg text-brand-blue counter" data-suffix="+" data-target="150">0+</h3>
+<p class="font-label-md text-label-md text-on-surface-variant">Enterprise Clients</p>
+</div>
+<!-- Card 2 -->
+<div class="glass-card rounded-xl p-lg flex flex-col gap-sm hover:-translate-y-1 transition-transform duration-300 reveal delay-100 spotlight-card">
+<span class="material-symbols-outlined text-brand-blue" style="font-variation-settings: 'FILL' 1;">group</span>
+<h3 class="font-display-lg text-display-lg text-brand-blue counter" data-suffix="k+" data-target="50">0k+</h3>
+<p class="font-label-md text-label-md text-on-surface-variant">Active Users</p>
+</div>
+<!-- Card 3 -->
+<div class="glass-card rounded-xl p-lg flex flex-col gap-sm hover:-translate-y-1 transition-transform duration-300 reveal delay-200 spotlight-card">
+<span class="material-symbols-outlined text-brand-blue" style="font-variation-settings: 'FILL' 1;">activity_zone</span>
+<h3 class="font-display-lg text-display-lg text-brand-blue counter" data-suffix="M+" data-target="2">0M+</h3>
+<p class="font-label-md text-label-md text-on-surface-variant">Daily Activities</p>
+</div>
+<!-- Card 4 -->
+<div class="glass-card rounded-xl p-lg flex flex-col gap-sm hover:-translate-y-1 transition-transform duration-300 reveal delay-300 spotlight-card">
+<span class="material-symbols-outlined text-brand-blue" style="font-variation-settings: 'FILL' 1;">bug_report</span>
+<h3 class="font-display-lg text-display-lg text-brand-blue counter" data-suffix="+" data-target="150">0+</h3>
+<p class="font-label-md text-label-md text-on-surface-variant">Production Crashes Resolved</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface w-full py-xl border-t border-white/5 mt-auto relative z-10">
+<div class="flex flex-col md:flex-row justify-between items-center max-w-container-max mx-auto px-gutter gap-md reveal">
+<span class="font-label-md text-label-md text-surface-tint">Aravind Puranam</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">© 2024 Built with Precision &amp; Performance</span>
+<div class="flex gap-md">
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors opacity-80 hover:opacity-100" href="https://github.com/aravind-p-developer">GitHub</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors opacity-80 hover:opacity-100" href="https://www.linkedin.com/in/aravind-puranam-9a9a241b5/">LinkedIn</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors opacity-80 hover:opacity-100" href="mailto:vnaravindganesh.p@gmail.com">Email</a>
+</div>
+</div>
+</footer>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        // Reveal Animations
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+        // Spotlight Effect
+        document.querySelectorAll('.spotlight-card').forEach(card => {
+            card.addEventListener('mousemove', e => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                card.style.setProperty('--x', `${x}px`);
+                card.style.setProperty('--y', `${y}px`);
+            });
+        });
+
+        // Counter Animations
+        const counterObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const el = entry.target;
+                    const targetVal = parseFloat(el.getAttribute('data-target'));
+                    const suffix = el.getAttribute('data-suffix') || '';
+                    
+                    if (prefersReducedMotion) {
+                        el.innerText = targetVal + suffix;
+                        observer.unobserve(el);
+                        return;
+                    }
+
+                    let startTimestamp = null;
+                    const duration = 2000;
+                    
+                    const step = (timestamp) => {
+                        if (!startTimestamp) startTimestamp = timestamp;
+                        const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                        // easeOutExpo
+                        const easeProgress = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
+                        const currentVal = (easeProgress * targetVal).toFixed(0);
+                        
+                        el.innerText = currentVal + suffix;
+                        
+                        if (progress < 1) {
+                            window.requestAnimationFrame(step);
+                        } else {
+                            el.innerText = targetVal + suffix;
+                        }
+                    };
+                    window.requestAnimationFrame(step);
+                    observer.unobserve(el);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        document.querySelectorAll('.counter').forEach(el => counterObserver.observe(el));
+
+        // Interactive Timeline
+        const timeline = document.querySelector('.timeline-container');
+        const timelineFill = document.querySelector('.timeline-fill');
+        const timelineDots = document.querySelectorAll('[data-timeline-dot]');
+        
+        if (timeline && timelineFill) {
+            window.addEventListener('scroll', () => {
+                const rect = timeline.getBoundingClientRect();
+                const winH = window.innerHeight;
+                
+                // Calculate scroll progress within the timeline section
+                if (rect.top < winH / 2 && rect.bottom > 0) {
+                    const scrolled = Math.max(0, (winH / 2) - rect.top);
+                    const total = rect.height;
+                    const progress = Math.min(100, (scrolled / total) * 100);
+                    timelineFill.style.height = `${progress}%`;
+
+                    // Highlight dots as line passes them
+                    timelineDots.forEach(dot => {
+                        const dotRect = dot.getBoundingClientRect();
+                        if (dotRect.top < winH / 2) {
+                            dot.classList.add('bg-brand-blue');
+                            dot.classList.add('shadow-[0_0_10px_rgba(59,130,246,0.8)]');
+                            dot.classList.remove('bg-surface-variant');
+                        } else {
+                            dot.classList.remove('bg-brand-blue');
+                            dot.classList.remove('shadow-[0_0_10px_rgba(59,130,246,0.8)]');
+                            dot.classList.add('bg-surface-variant');
+                        }
+                    });
+                } else if (rect.top >= winH / 2) {
+                    timelineFill.style.height = `0%`;
+                }
+            });
+        }
+    });
+</script>
+</body></html>
