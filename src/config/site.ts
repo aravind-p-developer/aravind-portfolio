@@ -4,8 +4,8 @@
 
 export const siteConfig = {
   name: 'Aravind Puranam',
-  title: 'Android Developer',
-  tagline: 'Building scalable enterprise mobile platforms',
+  title: 'Android Developer & Open Source Creator',
+  tagline: 'Building scalable enterprise mobile platforms & leading the Android Developer Knowledge Hub',
   email: 'vnaravindganesh.p@gmail.com',
   phone: '+91 8247000457',
   phoneHref: 'tel:+918247000457',

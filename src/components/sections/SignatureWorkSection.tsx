@@ -20,6 +20,8 @@ import {
 
   Film,
 
+  BookOpen,
+
 } from 'lucide-react';
 
 import { Card } from '../ui/Card';
@@ -50,6 +52,20 @@ const caseStudies: CaseStudy[] = [
 
   {
 
+    icon: <BookOpen size={32} />,
+
+    title: 'Android Developer Knowledge Hub',
+
+    description:
+
+      'Architected and published a 10-phase open-source Android learning platform mapping core OS internals, multi-threading architectures, and senior-level debugging paradigms.',
+
+    delay: 0,
+
+  },
+
+  {
+
     icon: <Database size={32} />,
 
     title: 'Offline-First Architecture',
@@ -58,7 +74,7 @@ const caseStudies: CaseStudy[] = [
 
       'Designed robust local-first data synchronization layers using Room and structured conflict resolution strategies to ensure seamless operation in low-connectivity environments.',
 
-    delay: 0,
+    delay: 0.1,
 
   },
 
@@ -72,7 +88,7 @@ const caseStudies: CaseStudy[] = [
 
       'Led complex migrations from deprecated background execution models to WorkManager, guaranteeing reliable, battery-efficient task execution for critical enterprise data processing.',
 
-    delay: 0.1,
+    delay: 0.2,
 
   },
 
@@ -86,7 +102,7 @@ const caseStudies: CaseStudy[] = [
 
       'Implemented precise, battery-optimized location tracking and geofencing systems for field-force management, balancing accuracy with device resource constraints.',
 
-    delay: 0.2,
+    delay: 0.3,
 
   },
 
@@ -100,7 +116,7 @@ const caseStudies: CaseStudy[] = [
 
       'Established crash monitoring, memory leak detection, and automated testing pipelines to improve stability across diverse Android device ecosystems.',
 
-    delay: 0.3,
+    delay: 0.4,
 
   },
 
@@ -114,7 +130,7 @@ const caseStudies: CaseStudy[] = [
 
       'Architected runtime-configurable platform capabilities — dynamic forms, validation frameworks, business rules engines, and schema-less data models — all driven by server-side metadata, eliminating app releases for configuration changes.',
 
-    delay: 0.4,
+    delay: 0.5,
 
   },
 
@@ -128,7 +144,7 @@ const caseStudies: CaseStudy[] = [
 
       'Engineered a custom offline image and video compression pipeline using Kotlin Coroutines and native Android Media APIs, reducing upload payload sizes significantly without any third-party compression dependencies.',
 
-    delay: 0.5,
+    delay: 0.6,
 
   },
 
